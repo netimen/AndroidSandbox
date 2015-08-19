@@ -5,11 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import ru.netimen.dagger.BookmateReader;
-import ru.netimen.dagger.BookmateReaderFragment_;
-import ru.netimen.dagger.DaggerBookmateReaderComponent;
-import ru.netimen.dagger.Document;
+import ru.netimen.dagger.code.Document;
 import ru.netimen.dagger.ReaderFragment;
+import ru.netimen.dagger.bookmate.BookmateReader;
+import ru.netimen.dagger.bookmate.BookmateReaderFragment_;
+import ru.netimen.dagger.bookmate.DaggerBookmateReaderComponent;
 
 public class MainActivity extends AppCompatActivity {
 

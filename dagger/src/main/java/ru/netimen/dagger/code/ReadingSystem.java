@@ -5,7 +5,7 @@
  * Author: Dmitry Gordeev <netimen@dreamindustries.co>
  * Date:   19.08.15
  */
-package ru.netimen.dagger;
+package ru.netimen.dagger.code;
 
 public class ReadingSystem {
 }

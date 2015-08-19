@@ -13,6 +13,7 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import ru.netimen.dagger.code.ReadingSystem;
 
 @Module
 public class Reader {

@@ -9,6 +9,8 @@ package ru.netimen.dagger;
 
 import org.androidannotations.annotations.EBean;
 
+import ru.netimen.dagger.bookmate.BookmateReaderTrait;
+
 @EBean
 public class MarkersTrait extends BookmateReaderTrait {
 }

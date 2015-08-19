@@ -5,13 +5,14 @@
  * Author: Dmitry Gordeev <netimen@dreamindustries.co>
  * Date:   19.08.15
  */
-package ru.netimen.dagger;
+package ru.netimen.dagger.bookmate;
 
 import java.io.Serializable;
 
 import javax.inject.Singleton;
 
 import dagger.Component;
+import ru.netimen.dagger.Reader;
 
 @Singleton
 @Component(modules = {BookmateReader.class, Reader.class})
