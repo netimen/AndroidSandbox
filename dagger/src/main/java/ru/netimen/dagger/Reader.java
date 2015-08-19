@@ -7,11 +7,47 @@
  */
 package ru.netimen.dagger;
 
-public class Reader {
-    public final String documentUuid;
-    private final Object parts[] = new Object[]{new SelectionModule()};
+import com.netimen.androidmodules.helpers.Bus;
 
-    public Reader(String documentUuid) {
-        this.documentUuid = documentUuid;
+import javax.inject.Singleton;
+
+import dagger.Module;
+import dagger.Provides;
+
+@Module
+public class Reader {
+
+//    public final Reader reader;
+//
+//    public ReaderModule(Reader reader) {
+//        this.reader = reader;
+//    }
+//
+//    @Provides
+//    @Singleton
+//    Reader provideReader() {
+//        return reader;
+//    }
+////    @Provides
+////    @Singleton
+////    Reader provideReader() {
+////        return new Reader("lalal");
+////    }
+//
+//    @Provides
+//    @Singleton
+//    SelectionModule provideSelectionModule() {
+//        return new SelectionModule();
+//    }
+//}
+
+    ReadingSystem readingSystem;
+
+    @Provides
+    @Singleton
+    Bus bus() {
+        return new Bus();
     }
+
+
 }

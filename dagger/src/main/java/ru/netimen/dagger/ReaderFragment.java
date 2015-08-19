@@ -11,27 +11,23 @@ import android.app.Fragment;
 
 import org.androidannotations.annotations.AfterInject;
 import org.androidannotations.annotations.EFragment;
-import org.androidannotations.annotations.FragmentArg;
 
-import ru.netimen.dagger.vehicle.DaggerVehicleComponent;
-import ru.netimen.dagger.vehicle.Vehicle;
-import ru.netimen.dagger.vehicle.VehicleComponent;
-
-@EFragment(resName = "fragment_reader")
+@EFragment
 public class ReaderFragment extends Fragment {
-    @FragmentArg
-    String documentUuid;
+
+    protected ReaderTrait traits[];
 
     @AfterInject
-    void afterInject() {
-        VehicleComponent vehicleComponent = DaggerVehicleComponent.create();
-        Vehicle v1 = vehicleComponent.provideVehicle();
-        Vehicle v2 = vehicleComponent.provideVehicle();
-        final Reader reader = new Reader(documentUuid);
-//        ReaderComponent readerComponent = DaggerReaderComponent.builder().readerModule(new ReaderModule(reader)).build();
+    protected void afterInject() {
         ReaderComponent readerComponent = DaggerReaderComponent.create();
-        readerComponent.inject(reader);
-        readerComponent.toString();
 
+        traits = createTraits();
+        for (ReaderTrait trait : traits)
+            readerComponent.inject(trait);
     }
+
+    protected ReaderTrait[] createTraits() {
+        return new ReaderTrait[]{SelectionTrait_.getInstance_(getActivity())};
+    }
+
 }
