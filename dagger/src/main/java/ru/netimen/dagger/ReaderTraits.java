@@ -3,13 +3,12 @@
  * All Rights Reserved.
  * <p/>
  * Author: Dmitry Gordeev <netimen@dreamindustries.co>
- * Date:   16.08.15
+ * Date:   19.08.15
  */
 package ru.netimen.dagger;
 
-import org.androidannotations.annotations.EBean;
+import com.netimen.androidmodules.helpers.Bus;
 
-@EBean
-public class SelectionTrait extends ReaderTrait {
-
+public class ReaderTraits { // generated
+    Bus bus;
 }

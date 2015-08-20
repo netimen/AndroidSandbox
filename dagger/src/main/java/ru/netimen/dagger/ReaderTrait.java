@@ -20,4 +20,5 @@ public abstract class ReaderTrait {
 
     @Inject
     protected Bus bus;
+
 }
