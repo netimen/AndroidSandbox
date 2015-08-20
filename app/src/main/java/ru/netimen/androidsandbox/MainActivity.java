@@ -5,11 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import ru.netimen.dagger.code.Document;
 import ru.netimen.dagger.ReaderFragment;
 import ru.netimen.dagger.bookmate.BookmateReader;
 import ru.netimen.dagger.bookmate.BookmateReaderFragment_;
-import ru.netimen.dagger.bookmate.DaggerBookmateReaderComponent;
+import ru.netimen.dagger.readercode.Document;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
         final String f = f((Integer)o);
         setContentView(R.layout.activity_main);
 //        ReaderFragment readerFragment = ReaderFragment_.builder().documentUuid("lalala").build();
-        ReaderFragment readerFragment = BookmateReaderFragment_.builder().readerComponent(DaggerBookmateReaderComponent.builder().bookmateReader(new BookmateReader(new Document())).build()).build();
+//        ReaderFragment readerFragment = BookmateReaderFragment_.builder().readerComponent(DaggerBookmateReaderComponent.builder().bookmateReader().build()).build();
+        ReaderFragment readerFragment = BookmateReaderFragment_.builder().bookmateReader(new BookmateReader(new Document())).build();
         getFragmentManager()
                 .beginTransaction()
                 .add(R.id.container, readerFragment, ReaderFragment.class.getSimpleName())

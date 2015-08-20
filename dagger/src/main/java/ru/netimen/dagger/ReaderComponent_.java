@@ -13,8 +13,8 @@ import javax.inject.Singleton;
 import dagger.Component;
 
 @Singleton
-@Component(modules = {Reader.class})
-public interface ReaderComponent {
+@Component(modules = {ReaderModule_.class})
+public interface ReaderComponent_ { // CUR generate this
 
     void inject(ReaderTrait trait);
 }

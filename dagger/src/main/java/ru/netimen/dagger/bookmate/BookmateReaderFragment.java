@@ -11,23 +11,24 @@ import org.androidannotations.annotations.AfterInject;
 import org.androidannotations.annotations.EFragment;
 import org.androidannotations.annotations.FragmentArg;
 
-import ru.netimen.dagger.MarkersTrait_;
+import ru.netimen.dagger.MarkersTrait;
 import ru.netimen.dagger.ReaderFragment;
+import ru.netimen.dagger.ReaderTraintsContainer_;
+import ru.netimen.dagger.SelectionTrait;
+import ru.netimen.dagger.readercode.ReadingSystem;
+import ru.netimen.dagger.traits.Traits;
 
 @EFragment
+@Traits(traits = {SelectionTrait.class, MarkersTrait.class}, sharedFields = {ReadingSystem.class})
 public class BookmateReaderFragment extends ReaderFragment {
 
     @FragmentArg
-    BookmateReaderComponent readerComponent;
+    BookmateReader bookmateReader;
 
-    private BookmateReaderTrait[] bookmateTraits;
+    private ReaderTraintsContainer_ readerTraintsContainer_;
 
     @AfterInject
     protected void afterInject() {
-        super.afterInject();
-
-        bookmateTraits = new BookmateReaderTrait[]{MarkersTrait_.getInstance_(getActivity())};
-        for (BookmateReaderTrait trait : bookmateTraits)
-            readerComponent.injectBookmate(trait);
+        readerTraintsContainer_ = new ReaderTraintsContainer_(getActivity(), bookmateReader);
     }
 }

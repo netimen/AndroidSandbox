@@ -3,24 +3,22 @@
  * All Rights Reserved.
  * <p/>
  * Author: Dmitry Gordeev <netimen@dreamindustries.co>
- * Date:   19.08.15
+ * Date:   20.08.15
  */
 package ru.netimen.dagger;
-
-import com.netimen.androidmodules.helpers.Bus;
 
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import ru.netimen.dagger.traits.BusModule;
 
 @Module
-public class BusModule {
+public class ReaderModule_ extends BusModule { // CUR generate
 
-    @Provides
     @Singleton
-    Bus bus() {
-        return new Bus();
+    @Provides
+    ReaderSharedFields_ readerSharedFields() {
+        return new ReaderSharedFields_();
     }
-
 }

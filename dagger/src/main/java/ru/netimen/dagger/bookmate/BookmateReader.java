@@ -7,12 +7,14 @@
  */
 package ru.netimen.dagger.bookmate;
 
+import java.io.Serializable;
+
 import dagger.Module;
 import dagger.Provides;
-import ru.netimen.dagger.code.Document;
+import ru.netimen.dagger.readercode.Document;
 
 @Module
-public class BookmateReader {
+public class BookmateReader implements Serializable {
     public final Document document;
 
     public BookmateReader(Document document) {

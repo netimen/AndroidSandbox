@@ -7,11 +7,9 @@
  */
 package ru.netimen.dagger;
 
-import dagger.Module;
-import ru.netimen.dagger.code.ReadingSystem;
+import ru.netimen.dagger.readercode.ReadingSystem;
 
-@Module
-public class Reader extends BusModule {
+public class ReaderSharedFields_ {
 
     ReadingSystem readingSystem;
 

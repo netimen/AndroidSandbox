@@ -11,14 +11,24 @@ import com.netimen.androidmodules.helpers.Bus;
 
 import javax.inject.Inject;
 
-public abstract class ReaderTrait {
-//    @Inject
-//    protected Reader reader;
+import ru.netimen.dagger.readercode.ReadingSystem;
+import ru.netimen.dagger.traits.Trait;
 
-//    @Inject
-//    protected ReaderModule reader;
+@Trait(ReaderSharedFields_.class)
+public abstract class ReaderTrait {
 
     @Inject
     protected Bus bus;
+
+    @Inject
+    protected ReaderSharedFields_ readerSharedFields;
+
+    protected ReadingSystem readingSystem() {
+        return readerSharedFields.readingSystem;
+    }
+
+    protected void setReadingSystem(ReadingSystem readingSystem) {
+        readerSharedFields.readingSystem = readingSystem;
+    }
 
 }

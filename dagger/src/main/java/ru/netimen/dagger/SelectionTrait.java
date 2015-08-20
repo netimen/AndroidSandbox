@@ -9,7 +9,12 @@ package ru.netimen.dagger;
 
 import org.androidannotations.annotations.EBean;
 
+import ru.netimen.dagger.readercode.SelectionStart;
+
 @EBean
 public class SelectionTrait extends ReaderTrait {
 
+    void onSelectionStart(SelectionStart event) {
+
+    }
 }
