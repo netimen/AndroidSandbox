@@ -9,10 +9,11 @@ package ru.netimen.dagger.bookmate;
 
 import java.io.Serializable;
 
+import javax.inject.Named;
+
 import dagger.Module;
 import dagger.Provides;
 import ru.netimen.dagger.readercode.Document;
-import ru.netimen.dagger.traits.InjectId;
 
 @Module
 public class BookmateReader implements Serializable { // CUR generate
@@ -31,13 +32,13 @@ public class BookmateReader implements Serializable { // CUR generate
     }
 
     @Provides
-    @InjectId("bookmark")
+    @Named("bookmark")
     String bookmark() {
         return bookmark;
     }
 
     @Provides
-    @InjectId("discovered")
+    @Named("discovered")
     String discovered() {
         return discovered;
     }
