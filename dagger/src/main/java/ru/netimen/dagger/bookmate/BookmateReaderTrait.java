@@ -21,11 +21,11 @@ public abstract class BookmateReaderTrait extends ReaderTrait {
     @Inject
     Document document;
 
-    @Named("bookmark")
     @Inject
+    @Named("bookmark")
     String bookmark;
 
-    @Named("discovered")
     @Inject
+    @Named("discovered")
     String discovered;
 }
