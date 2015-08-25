@@ -12,15 +12,17 @@ import java.io.Serializable;
 import dagger.Module;
 import dagger.Provides;
 import ru.netimen.dagger.readercode.Document;
+import ru.netimen.dagger.traits.InjectId;
 
 @Module
 public class BookmateReader implements Serializable { // CUR generate
     private final Document document;
-    private final String bookmark;
+    private final String bookmark, discovered;
 
-    public BookmateReader(Document document, String bookmark) {
+    public BookmateReader(Document document, String bookmark, String discovered) {
         this.document = document;
         this.bookmark = bookmark;
+        this.discovered = discovered;
     }
 
     @Provides
@@ -29,8 +31,14 @@ public class BookmateReader implements Serializable { // CUR generate
     }
 
     @Provides
-    @Bookmark
+    @InjectId("bookmark")
     String bookmark() {
         return bookmark;
+    }
+
+    @Provides
+    @InjectId("discovered")
+    String discovered() {
+        return discovered;
     }
 }

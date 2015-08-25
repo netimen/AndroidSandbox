@@ -1,4 +1,4 @@
-package ru.netimen.dagger.bookmate;
+package ru.netimen.dagger.traits;
 
 import javax.inject.Qualifier;
 
@@ -10,5 +10,6 @@ import javax.inject.Qualifier;
  * Date:   25.08.15
  */
 @Qualifier
-public @interface Bookmark {
+public @interface InjectId {
+    String value();
 }

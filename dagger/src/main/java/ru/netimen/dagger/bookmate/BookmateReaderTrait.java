@@ -12,6 +12,7 @@ import javax.inject.Inject;
 
 import ru.netimen.dagger.ReaderTrait;
 import ru.netimen.dagger.readercode.Document;
+import ru.netimen.dagger.traits.InjectId;
 import ru.netimen.dagger.traits.Trait;
 
 @Trait(BookmateReader.class)
@@ -20,7 +21,11 @@ public abstract class BookmateReaderTrait extends ReaderTrait {
     @Inject
     Document document;
 
-    @Bookmark
+    @InjectId("bookmark")
     @Inject
     String bookmark;
+
+    @InjectId("discovered")
+    @Inject
+    String discovered;
 }

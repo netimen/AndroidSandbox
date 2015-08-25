@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-        ReaderFragment readerFragment = BookmateReaderFragment_.builder().bookmateReader(new BookmateReader(new Document(), "bookmark")).build();
+        ReaderFragment readerFragment = BookmateReaderFragment_.builder().bookmateReader(new BookmateReader(new Document(), "bookmark", "disco")).build();
         getFragmentManager()
                 .beginTransaction()
                 .add(R.id.container, readerFragment, ReaderFragment.class.getSimpleName())
