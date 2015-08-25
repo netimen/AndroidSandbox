@@ -13,10 +13,10 @@ import ru.netimen.dagger.bookmate.BookmateReader;
 import ru.netimen.dagger.bookmate.BookmateReaderComponent_;
 import ru.netimen.dagger.bookmate.DaggerBookmateReaderComponent_;
 
-public class ReaderTraintsContainer_ {
+public class ReaderTraitsContainer_ {
     public final SelectionTraitHelper_ selectionTraitHelper;
 
-    public ReaderTraintsContainer_(Context context, BookmateReader bookmateReader) {
+    public ReaderTraitsContainer_(Context context, BookmateReader bookmateReader) {
         BookmateReaderComponent_ readerComponent = DaggerBookmateReaderComponent_.builder().bookmateReader(bookmateReader).build();
 
         final SelectionTrait_ selectionTrait = SelectionTrait_.getInstance_(context);

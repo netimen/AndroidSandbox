@@ -13,7 +13,7 @@ import org.androidannotations.annotations.FragmentArg;
 
 import ru.netimen.dagger.MarkersTrait;
 import ru.netimen.dagger.ReaderFragment;
-import ru.netimen.dagger.ReaderTraintsContainer_;
+import ru.netimen.dagger.ReaderTraitsContainer_;
 import ru.netimen.dagger.SelectionTrait;
 import ru.netimen.dagger.readercode.ReadingSystem;
 import ru.netimen.dagger.traits.Traits;
@@ -25,10 +25,10 @@ public class BookmateReaderFragment extends ReaderFragment {
     @FragmentArg
     BookmateReader bookmateReader;
 
-    private ReaderTraintsContainer_ readerTraintsContainer_;
+    private ReaderTraitsContainer_ readerTraitsContainer_;
 
     @AfterInject
     protected void afterInject() {
-        readerTraintsContainer_ = new ReaderTraintsContainer_(getActivity(), bookmateReader);
+        readerTraitsContainer_ = new ReaderTraitsContainer_(getActivity(), bookmateReader);
     }
 }
