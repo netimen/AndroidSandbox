@@ -14,15 +14,23 @@ import dagger.Provides;
 import ru.netimen.dagger.readercode.Document;
 
 @Module
-public class BookmateReader implements Serializable {
-    public final Document document;
+public class BookmateReader implements Serializable { // CUR generate
+    private final Document document;
+    private final String bookmark;
 
-    public BookmateReader(Document document) {
+    public BookmateReader(Document document, String bookmark) {
         this.document = document;
+        this.bookmark = bookmark;
     }
 
     @Provides
     Document document() {
         return document;
+    }
+
+    @Provides
+    @Bookmark
+    String bookmark() {
+        return bookmark;
     }
 }

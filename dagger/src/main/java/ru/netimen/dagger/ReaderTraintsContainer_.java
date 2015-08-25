@@ -13,7 +13,7 @@ import ru.netimen.dagger.bookmate.BookmateReader;
 import ru.netimen.dagger.bookmate.BookmateReaderComponent_;
 import ru.netimen.dagger.bookmate.DaggerBookmateReaderComponent_;
 
-public class ReaderTraintsContainer_ { // CUR generate
+public class ReaderTraintsContainer_ {
     public final SelectionTraitHelper_ selectionTraitHelper;
 
     public ReaderTraintsContainer_(Context context, BookmateReader bookmateReader) {

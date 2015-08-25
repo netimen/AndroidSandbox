@@ -14,7 +14,7 @@ import dagger.Provides;
 import ru.netimen.dagger.traits.BusModule;
 
 @Module
-public class ReaderModule_ extends BusModule { // CUR generate
+public class ReaderModule_ extends BusModule {
 
     @Singleton
     @Provides

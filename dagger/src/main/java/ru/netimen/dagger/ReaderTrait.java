@@ -15,7 +15,7 @@ import ru.netimen.dagger.readercode.ReadingSystem;
 import ru.netimen.dagger.traits.Trait;
 
 @Trait(ReaderSharedFields_.class)
-public abstract class ReaderTrait {
+public abstract class ReaderTrait { // CUR generate?
 
     @Inject
     protected Bus bus;

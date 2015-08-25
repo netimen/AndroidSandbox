@@ -11,7 +11,7 @@ import com.netimen.androidmodules.helpers.Bus;
 
 import ru.netimen.dagger.readercode.SelectionStart;
 
-public class SelectionTraitHelper_ { // CUR generate
+public class SelectionTraitHelper_ {
     SelectionTraitHelper_(final SelectionTrait selectionTrait) {
         final Bus.EventListener<SelectionStart> selectionStartEventListener = new Bus.EventListener<SelectionStart>() {
             @Override

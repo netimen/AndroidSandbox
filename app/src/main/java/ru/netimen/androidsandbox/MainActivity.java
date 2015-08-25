@@ -25,13 +25,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Object o = 3;
-//        final String f = f(o instanceof Integer ? (Integer) o : o);
-        final String f = f((Integer)o);
         setContentView(R.layout.activity_main);
-//        ReaderFragment readerFragment = ReaderFragment_.builder().documentUuid("lalala").build();
-//        ReaderFragment readerFragment = BookmateReaderFragment_.builder().readerComponent(DaggerBookmateReaderComponent.builder().bookmateReader().build()).build();
-        ReaderFragment readerFragment = BookmateReaderFragment_.builder().bookmateReader(new BookmateReader(new Document())).build();
+        ReaderFragment readerFragment = BookmateReaderFragment_.builder().bookmateReader(new BookmateReader(new Document(), "bookmark")).build();
         getFragmentManager()
                 .beginTransaction()
                 .add(R.id.container, readerFragment, ReaderFragment.class.getSimpleName())

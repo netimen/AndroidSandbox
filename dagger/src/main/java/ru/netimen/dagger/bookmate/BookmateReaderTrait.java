@@ -19,4 +19,8 @@ public abstract class BookmateReaderTrait extends ReaderTrait {
 
     @Inject
     Document document;
+
+    @Bookmark
+    @Inject
+    String bookmark;
 }
