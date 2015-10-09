@@ -5,11 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import ru.netimen.dagger.ReaderFragment;
-import ru.netimen.dagger.bookmate.BookmateReader;
-import ru.netimen.dagger.bookmate.BookmateReaderFragment_;
-import ru.netimen.dagger.readercode.Document;
-
 public class MainActivity extends AppCompatActivity {
 
 
@@ -26,11 +21,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-        ReaderFragment readerFragment = BookmateReaderFragment_.builder().bookmateReader(new BookmateReader(new Document(), "bookmark", "disco")).build();
-        getFragmentManager()
-                .beginTransaction()
-                .add(R.id.container, readerFragment, ReaderFragment.class.getSimpleName())
-                .commit();
+        MPermissionsActivity_.intent(this).start();
+//        ReaderFragment readerFragment = BookmateReaderFragment_.builder().bookmateReader(new BookmateReader(new Document(), "bookmark", "disco")).build();
+//        getFragmentManager()
+//                .beginTransaction()
+//                .add(R.id.container, readerFragment, ReaderFragment.class.getSimpleName())
+//                .commit();
     }
 
     @Override
