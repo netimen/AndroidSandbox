@@ -1,6 +1,20 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
 
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.mutualmobile.gradle.plugins:dexinfo:0.1.2'
+    }
+}
+
+apply plugin: 'com.mutualmobile.gradle.plugins.dexinfo'
+dexinfo {
+    maxDepth 3
+}
+
 android {
     compileSdkVersion 23
     buildToolsVersion "22.0.1"
@@ -24,9 +38,19 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:23.0.1'
 
-    compile project (':dagger')
+    compile project(':dagger')
+
     compile 'org.androidannotations:androidannotations-api:3.3.1'
     apt 'org.androidannotations:androidannotations:3.3.1'
+
+    compile 'com.github.hotchemi:permissionsdispatcher:1.2.1'
+    apt 'com.github.hotchemi:permissionsdispatcher-processor:1.2.1'
+
+    compile 'com.tbruyelle.rxpermissions:rxpermissions:0.2.0@aar'
+    compile 'io.reactivex:rxjava:1.0.14'
+//    compile 'io.reactivex:rxandroid:1.0.1'
+//    compile 'com.trello:rxlifecycle:0.3.0'
+//    compile 'com.trello:rxlifecycle-components:0.3.0'
 }
 
 apt {
